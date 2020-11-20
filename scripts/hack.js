@@ -4,8 +4,8 @@ export async function main(ns, args) {
 }
 
 async function hackServer(ns, server, threads) {
-    let serverSecurityThreshold = getServerMinSecurityLevel(server) + 2;
-    let moneyThreshold = getServerMaxMoney(target) * 0.95;
+    let serverSecurityThreshold = ns.getServerMinSecurityLevel(server) + 2;
+    let serverMoneyThreshold = ns.getServerMaxMoney(target) * 0.95;
     let opts = { threads: threads };
     while (true) {
         if (ns.getServerSecurityLevel(server) > serverSecurityThreshold) {
